@@ -21,7 +21,7 @@
 nghdl="nghdl-simulator"
 ghdl="ghdl-0.37"
 verilator="verilator-4.210"
-llvm_version="9"
+llvm_version="15"
 config_dir="$HOME/.nghdl"
 config_file="config.ini"
 src_dir=`pwd`
