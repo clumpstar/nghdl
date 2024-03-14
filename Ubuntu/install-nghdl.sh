@@ -88,7 +88,7 @@ function installDependency
 
 function installGHDL
 {   
-
+<<comment
     echo "Installing $ghdl LLVM................................."
     tar -xJf $ghdl.tar.xz
     echo "$ghdl successfully extracted"
@@ -113,13 +113,16 @@ function installGHDL
 
     echo "GHDL installed successfully"
     cd ../
+comment
+    echo "Installing ghdl-LLVM................................."
+    sudo apt-get install ghdl-llvm
     
 }
 
 
 function installVerilator
 {   
-    
+    <<comment
     echo "Installing $verilator......................."
     tar -xJf $verilator.tar.xz
     echo "$verilator successfully extracted"
@@ -141,6 +144,11 @@ function installVerilator
 
     echo "Verilator installed successfully"
     cd ../
+    comment
+
+    echo "Installing verilator_4.028......................."
+    wget https://cz.archive.ubuntu.com/ubuntu/pool/universe/v/verilator_4.028-1_amd64.deb
+    sudo apt-get install ./verilator_4.028-1_amd64.deb
 
 }
 
@@ -271,8 +279,8 @@ if [ $option == "--install" ];then
         echo -e "\n\n\nERROR: Unable to install required packages. Please check your internet connection.\n\n"
         exit 0
     fi
-    installGHDL
-    installVerilator
+    # installGHDL
+    # installVerilator
     installNGHDL
     createConfigFile
     createSoftLink
