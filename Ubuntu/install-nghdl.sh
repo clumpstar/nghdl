@@ -279,8 +279,8 @@ if [ $option == "--install" ];then
         echo -e "\n\n\nERROR: Unable to install required packages. Please check your internet connection.\n\n"
         exit 0
     fi
-    # installGHDL
-    # installVerilator
+    installGHDL
+    installVerilator
     installNGHDL
     createConfigFile
     createSoftLink
